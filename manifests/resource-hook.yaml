@@ -14,7 +14,9 @@ spec:
           command:
             - "curl"
             - "-X"
-            - "GET"
+            - "POST"
+            - "--data-urlencode"
+            - 'payload={"channel": "{{.app.metadata.name}}", "username": "hello", "text": "App Sync failed", "icon_emoji": ":ghost:"}'
             - "http://host.docker.internal:8080/api/argocdnotifications/"
       restartPolicy: Never
   backoffLimit: 2
