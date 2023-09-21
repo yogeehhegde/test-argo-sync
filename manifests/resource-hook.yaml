@@ -12,10 +12,7 @@ spec:
         - name: sync-notification
           image: curlimages/curl
           command:
-            - "curl"
-            - "-X"
-            - "POST"
-            - "payload={\"channel\": \"#somechannel\", \"username\": \"hello\", \"text\": \"App Sync failed\", \"icon_emoji\": \":ghost:\"}"
-            - "http://host.docker.internal:8080/api/argocdnotifications/"
+            - "curl --location 'http://localhost:8080/api/argocdnotifications' --header 'Content-Type: application/json' --data '{ 'test': 'test'}'"
+
       restartPolicy: Never
   backoffLimit: 2
