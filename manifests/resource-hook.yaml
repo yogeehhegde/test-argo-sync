@@ -13,10 +13,9 @@ spec:
           image: curlimages/curl
           command:
             - "curl"
-            - "-d"
-            - "param1=value1&param2=value2"
-            - "-X"
-            - "POST"
-            - "http://host.docker.internal:8080/api/argocdnotifications/"
+            - "--location"
+            - "http://host.docker.internal:8080/api/argocdnotifications"
+            - "--data"
+            - "{'test': 'test'}"
       restartPolicy: Never
   backoffLimit: 2
