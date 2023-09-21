@@ -16,6 +16,6 @@ spec:
             - "--location"
             - "http://host.docker.internal:8080/api/argocdnotifications"
             - "--data"
-            - "{'test': 'test'}"
+            - "{'App': '{{.app.metadata.name}}'}"
       restartPolicy: Never
   backoffLimit: 2
