@@ -13,10 +13,10 @@ spec:
           image: curlimages/curl
           command:
             - "curl"
+            - "-d"
+            - "param1=value1&param2=value2"
             - "-X"
             - "POST"
-            - "--data-urlencode"
-            - "payload={\"channel\": \"#somechannel\", \"username\": \"hello\", \"text\": \"App Sync failed\", \"icon_emoji\": \":ghost:\"}"
-            - " http://host.docker.internal:8080/api/argocdnotifications/"
+            - "http://host.docker.internal:8080/api/argocdnotifications/"
       restartPolicy: Never
   backoffLimit: 2
