@@ -12,7 +12,6 @@ spec:
         - name: sync-notification
           image: curlimages/curl
           command:
-            - "curl --location 'http://localhost:8080/api/argocdnotifications' --header 'Content-Type: application/json' --data '{ 'test': 'test'}'"
-
+            - "curl --location 'http://host.docker.internal:8080/api/argocdnotifications' --header 'Content-Type: application/json' --data '{ 'test': 'test'}'"
       restartPolicy: Never
   backoffLimit: 2
